@@ -1,0 +1,16 @@
+=== CHANGELOG for AI Assistant ChatBot Full Control ===
+
+= 1.1.0 = 
+* Improved admin panel interface
+* Enhanced frontend chat widget loading
+* Ensured jQuery compatibility
+* Fixed minor bugs
+* Updated README and documentation
+
+= 1.0.0 =
+* Initial release
+* Fully featured chat widget plugin
+* Editable from WordPress Admin
+* Automatic footer loading of chatbot
+* Supports translations
+* Optionally deletes settings on uninstall
