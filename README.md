@@ -62,16 +62,16 @@ After installation and activation:
 
 ## Screenshots
 
-<div style="display: flex; gap: 10px;">
+<div style="display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap;">
 
-  <div style="flex: 1;">
+  <div style="flex: 1; min-width: 300px;">
     <p><strong>Admin settings page</strong></p>
-    <img src="https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/dashboard-settings.png" alt="Admin Settings" width="50%">
+    <img src="https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/dashboard-settings.png" alt="Admin Settings" style="width: 100%; height: auto;">
   </div>
 
-  <div style="flex: 1;">
+  <div style="flex: 1; min-width: 300px;">
     <p><strong>Chat widget on frontend</strong></p>
-    <img src="https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/frontend-view.png" alt="Frontend Chat Widget" width="50%">
+    <img src="https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/frontend-view.png" alt="Frontend Chat Widget" style="width: 100%; height: auto;">
   </div>
 
 </div>
