@@ -62,11 +62,11 @@ After installation and activation:
 
 ## Screenshots
 
-1. Admin settings page  
-2. Chat widget on frontend  
-3. Quick reply buttons  
+1. **Admin settings page**  
+   ![Admin Settings](assets/img/dashboard-settings.png)
 
-*(Add screenshots in your repository for better presentation.)*
+2. **Chat widget on frontend**  
+   ![Frontend Chat Widget](assets/img/frontend-view.png)
 
 ---
 
