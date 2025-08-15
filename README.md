@@ -63,10 +63,10 @@ After installation and activation:
 ## Screenshots
 
 1. **Admin settings page**  
-   ![Admin Settings](assets/img/dashboard-settings.png)
+   ![Admin Settings](https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/dashboard-settings.png)
 
 2. **Chat widget on frontend**  
-   ![Frontend Chat Widget](assets/img/frontend-view.png)
+   ![Frontend Chat Widget](https://github.com/Said-Amarire/ai-assistant-chatbot/blob/main/ai-assistant-chatbot/assets/img/frontend-view.png)
 
 ---
 
