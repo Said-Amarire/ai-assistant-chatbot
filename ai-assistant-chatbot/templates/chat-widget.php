@@ -13,7 +13,7 @@ $defaults = [
     'user_icon' => '🧑',
     'bot_icon'  => '🤖',
     'quick_buttons' => 'Pricing,Payment Methods,Technical Support,Services,Free Services,Subscriptions,Game Top-ups,Special Offers,Delivery Info,Contact Us',
-    'warning_message' => 'Automated responses may sometimes be incorrect.',
+    'warning_message' => __('Automated responses may sometimes be incorrect.', 'ai-assistant-chatbot-full-control'),
     'enable_sound' => 1,
     'sound_url' => 'https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg'
 ];
@@ -99,13 +99,13 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
 </style>
 
 <div id="chat-widget">
-    <button id="chat-toggle" aria-label="Open chat">
+    <button id="chat-toggle" aria-label="<?php echo esc_attr(__('Open chat', 'ai-assistant-chatbot-full-control')); ?>">
         <svg viewBox="0 0 24 24"><path d="M20 2H4C2.897 2 2 2.897 2 4v16l4-4h14c1.103 0 2-0.897 2-2V4C22 2.897 21.103 2 20 2z"/><circle cx="8" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/></svg>
     </button>
     <div id="chat-box">
         <div id="chat-header">
             <span class="title"><?php echo esc_html($BOT_NAME); ?></span>
-            <span class="clear-chat" title="Clear Chat">
+            <span class="clear-chat" title="<?php echo esc_attr(__('Clear Chat', 'ai-assistant-chatbot-full-control')); ?>">
                 <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm2 3h14v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9zm3 2v8h2v-8H8zm4 0v8h2v-8h-2zm4 0v8h2v-8h-2z"/></svg>
             </span>
             <span class="close-chat">×</span>
@@ -120,7 +120,7 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
         </div>
 
         <div id="chat-input-area">
-            <input type="text" id="chat-input" placeholder="Type your message...">
+            <input type="text" id="chat-input" placeholder="<?php echo esc_attr(__('Type your message...', 'ai-assistant-chatbot-full-control')); ?>">
             <button id="send-btn">
                 <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
             </button>
@@ -166,7 +166,6 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
         const msg = document.createElement("div");
         msg.classList.add("message", sender==="You" ? "user" : "bot");
 
-        // build text with icon prefix
         const icon = sender === "You" ? USER_ICON : BOT_ICON;
         const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
 
@@ -177,12 +176,10 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
         if(sender !== "You" && ENABLE_SOUND) try { sound.play(); } catch(e){}
     }
 
-    // simple escape
     function escapeHtml(s){
         return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});
     }
 
-    // LocalStorage
     function saveMessages(){ localStorage.setItem('chatMessages', messagesDiv.innerHTML); }
     function loadMessages(){
         const prev = localStorage.getItem('chatMessages');
@@ -191,7 +188,6 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
     }
     loadMessages();
 
-    // Send message
     async function sendMessage(){
         const message = chatInput.value.trim();
         if(!message) return;
@@ -222,17 +218,15 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
         }
     }
 
-    // Clear chat
     if(clearBtn){
         clearBtn.addEventListener("click", ()=>{
-            if(confirm("Are you sure you want to clear the chat?")){
+            if(confirm("<?php echo esc_js(__('Are you sure you want to clear the chat?', 'ai-assistant-chatbot-full-control')); ?>")){
                 messagesDiv.innerHTML = '';
                 saveMessages();
             }
         });
     }
 
-    // Quick buttons click
     document.querySelectorAll(".quick-btn").forEach(btn=>{
         btn.addEventListener("click", ()=>{
             chatInput.value = btn.innerText;
@@ -240,11 +234,9 @@ body.chat-open { overflow:hidden !important; touch-action:none !important; posit
         });
     });
 
-    // Enter key & send button
     chatInput.addEventListener("keypress", e=>{
         if(e.key==="Enter") sendMessage();
     });
     sendBtn.addEventListener("click", sendMessage);
 })();
 </script>
-
