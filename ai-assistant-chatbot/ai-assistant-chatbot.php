@@ -7,7 +7,7 @@ Version: 1.1.0
 Author: Amarire Dev
 Author URI: https://amarire.dev
 License: GPL2
-Text Domain: ai-assistant-chatbot
+Text Domain: ai-assistant-chatbot-full-control
 */
 
 if (!defined('ABSPATH')) exit;
@@ -17,11 +17,6 @@ if (!defined('ABSPATH')) exit;
  */
 define('AI_CHATBOT_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AI_CHATBOT_PLUGIN_URL', plugin_dir_url(__FILE__));
-
-/**
- * Load Translation Files
- */
-load_plugin_textdomain('ai-assistant-chatbot', false, dirname(plugin_basename(__FILE__)) . '/languages');
 
 /**
  * Include Required Files
