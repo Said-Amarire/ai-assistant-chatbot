@@ -1,5 +1,5 @@
 === AI Assistant ChatBot Full Control ===
-Contributors: Amarire Dev
+Contributors: amariredev
 Tags: chatbot, AI, widget, chat
 Requires at least: 5.0
 Tested up to: 6.4
